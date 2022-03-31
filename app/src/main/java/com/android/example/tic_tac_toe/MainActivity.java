@@ -3,6 +3,7 @@ package com.android.example.tic_tac_toe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void dropIn(View view){
         ImageView counter = (ImageView) view;
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
-
+        Log.i("tappedCounter", String.valueOf(tappedCounter));
         if(gameState[tappedCounter] == 2 && gameActive) {
         gameState[tappedCounter] = activePlayer;
         counter.setTranslationX(-1500);
@@ -53,10 +54,18 @@ public class MainActivity extends AppCompatActivity {
                 playAgain.setVisibility(View.VISIBLE);
                 winnerTxt.setVisibility(View.VISIBLE);
             }
+            else if(tappedCounter == 8){
+                Button playAgain = (Button) findViewById(R.id.button5);
+                TextView winnerTxt = (TextView) findViewById(R.id.textView2);
+                winnerTxt.setText("Nobody has won!");
+                playAgain.setVisibility(View.VISIBLE);
+                winnerTxt.setVisibility(View.VISIBLE);
+            }
         }
         }
     }
     public void playAgain(View view){
+
         Button playAgain = (Button) findViewById(R.id.button5);
         TextView winnerTxt = (TextView) findViewById(R.id.textView2);
         playAgain.setVisibility(View.INVISIBLE);
@@ -73,4 +82,5 @@ public class MainActivity extends AppCompatActivity {
         activePlayer = 0;
         gameActive = true;
     }
+
 }
