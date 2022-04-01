@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,13 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 Button playAgain = (Button) findViewById(R.id.button5);
                 TextView winnerTxt = (TextView) findViewById(R.id.textView2);
                 winnerTxt.setText(winner + " has won!");
-                playAgain.setVisibility(View.VISIBLE);
-                winnerTxt.setVisibility(View.VISIBLE);
-            }
-            else if(tappedCounter == 8){
-                Button playAgain = (Button) findViewById(R.id.button5);
-                TextView winnerTxt = (TextView) findViewById(R.id.textView2);
-                winnerTxt.setText("Nobody has won!");
                 playAgain.setVisibility(View.VISIBLE);
                 winnerTxt.setVisibility(View.VISIBLE);
             }
